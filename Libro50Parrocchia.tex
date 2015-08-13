@@ -18,11 +18,13 @@
 \usepackage{enumerate} % for small roman letters in enumerate
 \usepackage{algorithm} % for algorithms
 \usepackage{algpseudocode}
-\usepackage[acronyms,nopostdot,nogroupskip,toc,nonumberlist]{glossaries}
+%\usepackage[acronyms,nopostdot,nogroupskip,toc,nonumberlist]{glossaries}
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{cite} % for citation grouping
 \usepackage{pdfpages}
+
+\setlength{\parindent}{0cm}
 
 \setlength{\headheight}{15pt}
 %Comandi per apici e peidici in text
@@ -105,7 +107,7 @@
 %%   list of acronyms
 %%
 %%\loadglsentries{sources/acronyms.tex}
-\input{sources/acronyms.tex}
+%\input{sources/acronyms.tex}
 %%========================================================
 
 %%========================================================
@@ -140,22 +142,22 @@
 %\linespread{1.2}
 
 \allowdisplaybreaks[1] % Per spezzare equazioni su più righe
-\makenoidxglossaries
+%\makenoidxglossaries
 
 \begin{document}
 \raggedbottom % Prevent vertical justification
 %%========================================================
 %%  italian abstract and acknowledgements
 \pagenumbering{roman}
-%\input{sources/0a_abstract.tex}
-%\input{sources/0b_acknowledgements.tex}
+\input{sources/0a_abstract.tex}
+\input{sources/0b_acknowledgements.tex}
 %%========================================================
 
 %%========================================================
 %%  indexes
 \tableofcontents
-\listoffigures
-\printnoidxglossaries
+%\listoffigures
+%\printnoidxglossaries
 %\listoftables
 \cleardoublepage
 %%========================================================
@@ -166,16 +168,8 @@
 \pagestyle{fancy} % style with headnotes, rule, etc.
 \addtolength{\headwidth}{12mm} % long rule
 \input{sources/0c_Introduction.tex}
+\input{sources/Baldassa.tex}
+\input{sources/SalutoBaldassa.tex}
 %%========================================================
 
-%%========================================================
-%% bibliography
-%\bibliography{sources/biblio_thesis}
-%\bibliographystyle{ieeetr}
-%%========================================================
-
-%%========================================================
-%% appendix
-\input{sources/appendix.tex}
-%%========================================================
 \end{document}
