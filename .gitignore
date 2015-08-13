@@ -1,0 +1,7 @@
+Libro50Parrocchia.*
+!Libro50Parrocchia.tex
+*.log
+log*.*
+*.synctex
+temp/
+bin/

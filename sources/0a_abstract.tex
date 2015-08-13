@@ -1,0 +1,101 @@
+\thispagestyle{empty}
+\vspace*{15ex}
+\begin{flushright}
+\textit{La Fede e la Ragione sono come le due ali \\
+con le quali lo spirito umano s'innalza \\
+verso la contemplazione della verit\`a.\\}
+\vspace{4ex}
+\scriptsize{San Giovanni Paolo II.}
+\end{flushright}
+\cleardoublepage
+
+\chapter*{Abstract}
+\label{chap:abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+\glsresetall
+Negli ultimi anni, la grande crescita tecnologica dei sistemi wireless ha permesso lo sviluppo di nuovi
+servizi ed applicazioni, disponibili in qualunque luogo per mezzo dei dispositivi mobili.
+Molti di questi servizi, possono operare al meglio solo conoscendo la posizione del dispositivo.
+Per questo motivo, i servizi basati sul posizionamento (LBS) hanno riscontrato negli ultimi anni un 
+grande interesse, richiedendo ai moderni sistemi wireless, l'implementazione di sistemi di posizionamento
+integrati nel dispositivo. 
+Uno dei maggiori campi di applicazione degli LBS \`e sicuramente il settore dei trasporti, che include 
+navigazione di veicoli, gestione degli incidenti, gestione del traffico e dell'assistenza stradale.
+Un'altra importante applicazione \`e quella della sicurezza. I servizi di emergenza richiedono infatti 
+che durante una telefonata ai numeri preposti (911 negli Stati Uniti e 112 in Europa),
+la posizione del chiamante sia nota con elevata precisione alla centrale.
+I servizi basati sul posizionamento hanno inoltre destato interesse in molti altri campi, 
+come ad esempio per gli annunci pubblicitari basati sulla localit\`a dell'utente, per il controllo 
+dello spostamento di persone o animali e per la navigazione pedonale nelle aeree urbane o dentro gli edifici.
+Un'altra classe di servizi che sta diventando sempre pi\`u popolare, \`e quella delle assicurazioni a consumo.
+Questo tipo di assicurazione viene applicata ai veicoli, e permette una determinazione del rischio
+associato all'assicurato sulla base della quantit\`a di chilometri percorsi
+e sul tipo di guida adottata dall'assicurato, portando eventualmente ad una diminuzione del premio.
+Va detto che, molti dei servizi sopra citati necessitano di una stima accurata della posizione, mentre 
+altri possono funzionare con una stima pi\`u approssimata.
+Fin'ora, i servizi basati sull'utilizzo dei satelliti o \gls{gnss} hanno garantito prestazioni eccellenti 
+nei dispositivi mobili. L'utilizzo dei dispositivi in ambienti ostili, come 
+nelle citt\`a o all'interno di edifici peggiora per\`o le prestazioni dei sistemi di posizionamento GNSS, a causa 
+della perdita di visibilit\`a dei satelliti e del tipo di propagazione a cammini multipli caratteristica 
+di questi ambienti. Per ovviare a questo problema, sono stati studiati sistemi di 
+posizionamento ibridi, basati sulla ricezione di segnali terrestri ad elevata potenza e ad ampio raggio,
+come i segnali delle reti cellulari e i segnali Wi-Fi. Questi sistemi sfruttano la conoscenza della posizione delle 
+stazioni radio base cellulari o degli access point Wi-Fi per ricavare la posizione del ricevitore, e possono 
+entrare in funzione in supporto dei sistemi GNSS quando questi ultimi non sono disponibili. 
+Questi sistemi di posizionamento non offrono per\`o 
+le stesse prestazioni dei sistemi GNSS, e commettono un errore di posizionamento paragonabile alla dimensione della cella 
+(alcuni Km) o alla portata degli access point Wi-Fi (alcune centinaia di metri). 
+Per ottenere prestazioni paragonabili a quelle dei sistemi satellitari, si deve ricorrere ai sistemi di 
+posizionamento basati sulla stima dei tempi di arrivo (TOA). 
+Il nuovo standard \gls{3gpp} \gls{lte} basato su  un sistema di modulazione multi portante, risulta 
+adeguato per questo scopo. LTE \`e infatti il primo standard mobile ad essere stato progettato con 
+capacit\`a di posizionamento, grazie  alla trasmissione di particolari segnali di riferimento chiamati 
+PRS. Lo standard LTE prevede inoltre la trasmissioni di segnali di riferimento ideati per altri scopi,
+che possono essere sfruttati in maniera opportunistica per la localizzazione del ricevitore, 
+nel caso in cui i PRS non siano disponibili. 
+Il problema principale dei sistemi di posizionamento basati sulla stima dei TOA, \`e che il tempo di arrivo
+del percorso diretto dev'essere riconosciuto e separato dal tempo di arrivo del segnale attraverso 
+riflessioni multiple. Negli ambienti urbani o all'interno degli edifici, le componenti di segnale che arrivano al 
+ricevitore, sono molto vicine tra loro, ed \`e quindi necessario trovare un modo per aumentare
+la risoluzione della stima dei tempi di arrivo.
+Per far fronte a questo problema, la tesi si \`e concentrata sull'utilizzo dei \gls{sra}, ovvero una serie
+di strumenti matematici che possono essere utilizzati per la stima dei tempi di arrivo di un canale affetto da cammini 
+multipli. Questi algoritmi prendono il nome dalla loro capacit\`a di distinguere componenti molto vicini tra di loro
+in tempo e frequenza.
+In questa tesi, sono stati realizzati dei framework per la stima dei tempi di 
+arrivo (TOA) dei segnali di riferimento LTE che utilizzano i SRA per migliorare l'accuratezza della
+stima dei tempi di arrivo. Gli algoritmi sviluppati sono stati applicati su dati LTE reali acquisiti
+in uno scenario di propagazione a cammini multipli dal team di \gls{hsr} a su dati LTE emulati che sono stati 
+gentilmente forniti dal tem del Centro Aereospaziale Tedesco (DLR).
+Per dimostrare la loro efficacia, le prestazioni delle tecniche basate sugli SRA, sono state confrontate
+con quelle di una tecnica di stima dei tempi di arrivo convenzionale sui segnali emulati.
+Lo scenario in cui sono stati acquisiti i dati LTE reali \`e stato inoltre simulato con un software
+per ray-tracing, ed i risultati sono stati confrontati con quelli ottenuti dagli algoritmi sviluppati
+in questa tesi.
+Il presente lavoro di tesi si articola in una prima parte teorica, dove vengono analizzate le principali tecniche di
+posizionamento, lo standard LTE e gli strumenti matematici SRA che saranno 
+utilizzati per la stima dei tempi di arrivo a partire dalla ricezione dei segnali di riferimento LTE, e 
+in una seconda parte che presenta i nuovi framework per la stima dei tempi di arrivo di segnali LTE sviluppati in 
+questo lavoro. Vengono infine presentati i risultati dell'utilizzo di questi strumenti su segnali LTE reali 
+ed emulati. 
+
+Nello specifico. la tesi \`e divisa nei seguenti capitoli.
+\begin{itemize}
+\item[-] Il capitolo \ref{chap:positioning} descrive i sistemi di posizionamento pi\`u utilizzati dal punto di vista 
+delle grandezze fisiche implicate.
+\item[-] Il capitolo \ref{chap:lte_phisical_layer} tratta nel dettaglio il sistema 
+di modulazione multi-portante \gls{ofdm} ed il livello fisico dello standard LTE. Sono altres\'i descritti i principali segnali 
+di riferimento dello standard LTE.
+\item[-] Il capitolo \ref{chap:super_resolution_algorithms} analizza gli strumenti matematici chiamati 
+\acrlong{sra}, su cui si basa il sistema di stima dei tempi di arrivo sviluppato in questa tesi.
+\item[-] Il capitolo \ref{chap:framework_toa_estimation} presenta i diversi framework per la stima dei tempi di arrivo realizzati in questa tesi.
+\item[-] Il capitolo \ref{chap:toa_estimation_real_data} riporta i risultati ottenuti applicando i framework su dati LTE reali misurati dal team 
+di \gls{hsr}.
+\item[-] Il capitolo \ref{chap:toa_estimation_emulated} riporta i risultati ottenuti applicando i framework su dati LTE emulati realizzati
+dal team del DLR.
+\item[-] Il capitolo \ref{chap:ray_tracing_simulation} descrive i risultati di una simulazione elettromagnetica sullo scenario dei dati LTE reali,
+in modo da verificare i risultati ottenuti per via sperimentale.
+\item[-] Infine, il capitolo \ref{chap:conclusions} riassume i risultati ottenuti in questo lavoro e propone delle nuove idee per future attivit\`a di ricerca.
+\end{itemize}
+Il lavoro che costituisce questa tesi \`e stato realizzato nel gruppo di ricerca per le telecomunicazioni dell'Universit\`a di Trieste sotto la
+supervisione del Prof. Fulvio Babich e del Dr. Marco Driusso, che ringrazio cordialmente.

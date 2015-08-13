@@ -1,0 +1,181 @@
+\documentclass[12pt,titlepage,openright,twoside]{report}
+\usepackage[a5paper,showframe]{geometry}
+\usepackage[notlot]{tocbibind} % for having bibliography, list of figures, etc.. in the table of contents (nottoc,notlof,notlof for not displaying toc, lof, lot)
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fontenc}
+\usepackage{url} % per gestione url nella bibliografia
+\usepackage{amsmath} % per tutte le formulacce matematiche
+\usepackage{mathdots} 
+\usepackage{amssymb} % per r reali
+\usepackage{amscd} % per diagrammi
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{graphicx} % per immagini
+\usepackage[margin=10pt,font=small,labelfont=bf,labelsep=endash]{caption} % didascalie personalizzate
+\usepackage{fancyhdr}%per intestazione personalizzata
+\usepackage[bookmarks,hidelinks]{hyperref} % for pdf index and links
+\usepackage{enumerate} % for small roman letters in enumerate
+\usepackage{algorithm} % for algorithms
+\usepackage{algpseudocode}
+\usepackage[acronyms,nopostdot,nogroupskip,toc,nonumberlist]{glossaries}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{cite} % for citation grouping
+\usepackage{pdfpages}
+
+\setlength{\headheight}{15pt}
+%Comandi per apici e peidici in text
+\newcommand{\pedic}[2]{#1_{\text{#2}}}
+\newcommand{\apic}[2]{#1^{\text{#2}}}
+\newcommand{\apicpedic}[3]{#1^{\text{#2}}_{\text{#3}}}
+\newcommand{\modulus}[1]{\left| #1 \right|}
+\newcommand{\boldText}[1]{\text{\textbf{#1}}}
+
+\renewcommand{\arraystretch}{1.4}
+\renewcommand{\alglinenumber}[1]{\tiny#1:}
+
+\newcolumntype{b}{X}
+\newcolumntype{s}{>{\hsize=.5\hsize}X}
+\newcolumntype{a}{>{\hsize=.4\hsize}X}
+\newcolumntype{r}{>{\hsize=.2\hsize}X}
+
+\makeatletter
+\newcounter{imagepage}
+\newcommand*{\foreachpage}[2]{%
+  \begingroup
+    \sbox0{\includegraphics{#1}}%
+    \xdef\foreachpage@num{\the\pdflastximagepages}%
+  \endgroup
+  \setcounter{imagepage}{0}%
+  \@whilenum\value{imagepage}<\foreachpage@num\do{%
+    \stepcounter{imagepage}%
+    #2\relax
+  }%
+}
+\makeatother
+
+
+%%========================================================
+%%     modifica dimensioni layout larghezza pagina
+%%
+\addtolength{\textwidth}{7mm}%aumento larghezza testo
+\addtolength{\hoffset}{-3.5mm}%diminuisco colonna per note a fianco per centrare testo allargato
+\addtolength{\evensidemargin}{-1mm}%sposto la colonna di testo delle pagine pari a sinistra
+\addtolength{\oddsidemargin}{1mm}%sposto la colonna di testo delle pagine dispari a destra
+%%
+%%========================================================
+
+%%========================================================
+%%            personalizzazione intestazione
+%%
+% i comandi seguenti impediscono la scrittura in maiuscolo
+% dei nomi dei capitoli e dei paragrafi nelle intestazioni
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhf{} % rimuove l’attuale contenuto dell’intestazione
+            % e del pi\‘e di pagina
+%opzioni da mettere per twoside
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[LO]{\nouppercase\rightmark}%\nouppercase elimina tutte le intestazioni maiuscole
+\fancyhead[RE]{\nouppercase\leftmark}%\nouppercase elimina tutte le intestazioni maiuscole
+%
+%opzioni da mettere per oneside
+%\fancyhead[RO]{\thepage}
+%\fancyhead[LO]{\rightmark}
+%
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\headheight}{1.7pt} % riserva spazio per la linea
+\fancypagestyle{plain}{%ridefinisce lo stile plain usato nelle pagine di chapter
+\fancyhead{} % ignora, nello stile plain, le intestazioni
+   \renewcommand{\headrulewidth}{0pt} % e la linea
+   \fancyfoot[C]{\thepage}%per avere numero pagina anche pagina iniziale chapter
+}
+%%
+%%========================================================
+
+%%========================================================
+%%   per imporre sillabazione
+%%
+\hyphenation{STSK}%
+%%========================================================
+
+%%========================================================
+%%   list of acronyms
+%%
+%%\loadglsentries{sources/acronyms.tex}
+\input{sources/acronyms.tex}
+%%========================================================
+
+%%========================================================
+%%   comandi personalizzati
+%%
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+\newcommand{\realpin}[1]{\mathbb{R}\text{e}\{ #1 \}}
+\newcommand{\imagpin}[1]{\mathbb{I}\text{m}\{ #1 \}}
+\newcommand{\realp}[1]{\mathbb{R}\text{e}\left \{ #1 \right \}}
+\newcommand{\imagp}[1]{\mathbb{I}\text{m}\left \{ #1 \right \}}
+\newcommand{\phasein}[1]{\text{arg}\{ #1 \}}
+\newcommand{\phase}[1]{\text{arg}\left \{ #1 \right \}}
+\newcommand{\fcar}{f_\text{c}}
+\newcommand{\fdop}{f_\text{D}}
+\newcommand{\fdopn}{f_{\text{D},n}}
+\newcommand{\fdopnm}{f_{\text{D},n,m}}
+\newcommand{\average}[1]{\mathbb{E} \left[ #1 \right] }
+\newcommand{\averagein}[1]{\mathbb{E} [ #1 ]}
+\newcommand{\tra}{\text{T}}
+\newcommand{\her}{\text{H}}
+\newcommand{\vecop}[1]{\text{vec}\left( #1 \right)}
+\newcommand{\vecopin}[1]{\text{vec}( #1 )}
+\newcommand{\variance}[1]{\text{Var}\left( #1 \right)}
+\newcommand{\variancein}[1]{\text{Var}( #1 )}
+\newcommand{\tr}[1]{\text{tr} \left( #1 \right)}
+\newcommand{\rank}[1]{\text{rank} ( #1 )}
+\newcommand{\trin}[1]{\text{tr}( #1 )}
+\newcommand{\bpsonhz}{\left[  \frac{\text{bps}}{\text{Hz}} \right]}
+\newcommand{\bpsonhzin}{[ \frac{ \text{bps} }{ \text{Hz} } ]}
+%%========================================================
+
+%\linespread{1.2}
+
+\allowdisplaybreaks[1] % Per spezzare equazioni su più righe
+\makenoidxglossaries
+
+\begin{document}
+\raggedbottom % Prevent vertical justification
+%%========================================================
+%%  italian abstract and acknowledgements
+\pagenumbering{roman}
+%\input{sources/0a_abstract.tex}
+%\input{sources/0b_acknowledgements.tex}
+%%========================================================
+
+%%========================================================
+%%  indexes
+\tableofcontents
+\listoffigures
+\printnoidxglossaries
+%\listoftables
+\cleardoublepage
+%%========================================================
+
+%%========================================================
+%% thesis chapters
+\pagenumbering{arabic} % normal page numbering
+\pagestyle{fancy} % style with headnotes, rule, etc.
+\addtolength{\headwidth}{12mm} % long rule
+\input{sources/0c_Introduction.tex}
+%%========================================================
+
+%%========================================================
+%% bibliography
+\bibliography{sources/biblio_thesis}
+\bibliographystyle{ieeetr}
+%%========================================================
+
+%%========================================================
+%% appendix
+\input{sources/appendix.tex}
+%%========================================================
+\end{document}
