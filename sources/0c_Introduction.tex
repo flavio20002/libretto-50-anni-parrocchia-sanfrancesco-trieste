@@ -1,4 +1,4 @@
-\chapter{Introduzione}
+\chapter*{Introduzione}
 \label{chap:Introduction}
 In the last decades, the rapid growth of wireless technologies, dramatically increased the number of 
 active mobile devices. Information collected or communicated by a wireless device is often meaningful 
@@ -10,7 +10,6 @@ only in conjunction with the knowledge of the device's location.
 %\includepdf[pages=-, offset = 0mm -0.9mm, pagecommand={}]{testi/SalutoBaldassa/salutoBaldassa.pdf}
 %\includepdf[pages=-, offset = 0mm -0.9mm, pagecommand={}]{testi/Baldassa/Baldassa.pdf}
 
-
 \foreachpage{testi/lettera_fondazionale.pdf}{%
   \newpage   
   \begingroup 
@@ -20,6 +19,19 @@ only in conjunction with the knowledge of the device's location.
       width=\textwidth,  
       height=\textheight,
     ]{testi/lettera_fondazionale.pdf}%
+    \newpage
+  \endgroup
+}
+
+\foreachpage{testi/riconoscimento_civile.pdf}{%
+  \newpage   
+  \begingroup 
+    \centering
+    \includegraphics[
+      page=\value{imagepage},
+      width=\textwidth,  
+      height=\textheight,
+    ]{testi/riconoscimento_civile.pdf}%
     \newpage
   \endgroup
 }
