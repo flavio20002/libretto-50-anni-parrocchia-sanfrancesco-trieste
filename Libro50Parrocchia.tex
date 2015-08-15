@@ -27,17 +27,15 @@
 \usepackage{multirow}
 \usepackage{tabularx}
 \usepackage{ltablex}
+\usepackage{bigstrut}
 
-\newcolumntype{s}{>{\hsize=.5\hsize}X}
+%\renewcommand{\rmdefault}{ptm} %Times
+\renewcommand*\rmdefault{ppl} %Palatino
+%\renewcommand*\rmdefault{cmr} %Computer Modern Roman (default)
+
 \setlength{\parindent}{0cm}
 
 \setlength{\headheight}{15pt}
-%Comandi per apici e peidici in text
-\newcommand{\pedic}[2]{#1_{\text{#2}}}
-\newcommand{\apic}[2]{#1^{\text{#2}}}
-\newcommand{\apicpedic}[3]{#1^{\text{#2}}_{\text{#3}}}
-\newcommand{\modulus}[1]{\left| #1 \right|}
-\newcommand{\boldText}[1]{\text{\textbf{#1}}}
 
 \renewcommand{\arraystretch}{1.4}
 \renewcommand{\alglinenumber}[1]{\tiny#1:}
@@ -109,39 +107,13 @@
 %%========================================================
 
 %%========================================================
-%%   list of acronyms
-%%
-%%\loadglsentries{sources/acronyms.tex}
-%\input{sources/acronyms.tex}
-%%========================================================
-
-%%========================================================
 %%   comandi personalizzati
 %%
-\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
-\newcommand{\realpin}[1]{\mathbb{R}\text{e}\{ #1 \}}
-\newcommand{\imagpin}[1]{\mathbb{I}\text{m}\{ #1 \}}
-\newcommand{\realp}[1]{\mathbb{R}\text{e}\left \{ #1 \right \}}
-\newcommand{\imagp}[1]{\mathbb{I}\text{m}\left \{ #1 \right \}}
-\newcommand{\phasein}[1]{\text{arg}\{ #1 \}}
-\newcommand{\phase}[1]{\text{arg}\left \{ #1 \right \}}
-\newcommand{\fcar}{f_\text{c}}
-\newcommand{\fdop}{f_\text{D}}
-\newcommand{\fdopn}{f_{\text{D},n}}
-\newcommand{\fdopnm}{f_{\text{D},n,m}}
-\newcommand{\average}[1]{\mathbb{E} \left[ #1 \right] }
-\newcommand{\averagein}[1]{\mathbb{E} [ #1 ]}
-\newcommand{\tra}{\text{T}}
-\newcommand{\her}{\text{H}}
-\newcommand{\vecop}[1]{\text{vec}\left( #1 \right)}
-\newcommand{\vecopin}[1]{\text{vec}( #1 )}
-\newcommand{\variance}[1]{\text{Var}\left( #1 \right)}
-\newcommand{\variancein}[1]{\text{Var}( #1 )}
-\newcommand{\tr}[1]{\text{tr} \left( #1 \right)}
-\newcommand{\rank}[1]{\text{rank} ( #1 )}
-\newcommand{\trin}[1]{\text{tr}( #1 )}
-\newcommand{\bpsonhz}{\left[  \frac{\text{bps}}{\text{Hz}} \right]}
-\newcommand{\bpsonhzin}{[ \frac{ \text{bps} }{ \text{Hz} } ]}
+\newcommand{\pedic}[2]{#1_{\text{#2}}}
+\newcommand{\apic}[2]{#1^{\text{#2}}}
+\newcommand{\apicpedic}[3]{#1^{\text{#2}}_{\text{#3}}}
+\newcommand{\modulus}[1]{\left| #1 \right|}
+\newcommand{\boldText}[1]{\text{\textbf{#1}}}
 %%========================================================
 
 %\linespread{1.2}
