@@ -1,4 +1,4 @@
-\documentclass[12pt,titlepage,openright,twoside]{report}
+\documentclass[10pt,titlepage,openright,twoside]{report}
 \usepackage[a5paper,showframe]{geometry}
 \usepackage[notlot]{tocbibind} % for having bibliography, list of figures, etc.. in the table of contents (nottoc,notlof,notlof for not displaying toc, lof, lot)
 \usepackage[italian]{babel}
@@ -30,20 +30,38 @@
 \usepackage{ltablex}
 \usepackage{bigstrut}
 
+%%========================================================
+%%     modifica dimensioni e formato del titolo dei capitoli
+%%
+\usepackage{titlesec,color}
+\newcommand{\hsp}{\hspace{10pt}}
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp}{0pt}{\Huge\bfseries}
+\titlespacing*{\chapter}{0cm}{-\topskip+20pt}{20pt}[0pt]
+%%
+%%========================================================
+
+%%========================================================
+%%     carattere
+%%
 \renewcommand{\rmdefault}{ptm} %Times
 %\renewcommand*\rmdefault{ppl} %Palatino
 %\renewcommand*\rmdefault{cmr} %Computer Modern Roman (default)
+%%
+%%========================================================
 
-\setlength{\parindent}{0cm}
+
+\setlength{\parindent}{0cm} %Disabilita indentazione dei paragrafi
 
 \setlength{\headheight}{15pt}
 \renewcommand{\arraystretch}{1.4}
 \renewcommand{\alglinenumber}[1]{\tiny#1:}
 
 \def\tabularxcolumn#1{m{#1}} %center vertically
-\newcolumntype{b}{X}
 \newcolumntype{s}{>{\centering\arraybackslash\hsize=.5\hsize}X} %center horizontally
 
+%%========================================================
+%%     Permette di inserire un pdf come immagini
+%%
 \makeatletter
 \newcounter{imagepage}
 \newcommand*{\foreachpage}[2]{%
@@ -58,6 +76,8 @@
   }%
 }
 \makeatother
+%%
+%%========================================================
 
 
 %%========================================================
@@ -109,16 +129,9 @@
 %%   comandi personalizzati
 %%
 \newcommand{\pedic}[2]{#1_{\text{#2}}}
-\newcommand{\apic}[2]{#1^{\text{#2}}}
-\newcommand{\apicpedic}[3]{#1^{\text{#2}}_{\text{#3}}}
-\newcommand{\modulus}[1]{\left| #1 \right|}
-\newcommand{\boldText}[1]{\text{\textbf{#1}}}
 %%========================================================
 
 %\linespread{1.2}
-
-\allowdisplaybreaks[1] % Per spezzare equazioni su più righe
-%\makenoidxglossaries
 
 \begin{document}
 \raggedbottom % Prevent vertical justification
