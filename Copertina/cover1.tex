@@ -20,11 +20,12 @@ scale=1
 \pagestyle{empty}
 \BgThispage
 \begin{tikzpicture}[remember picture, overlay]
-\node[minimum width=\paperwidth, minimum height=6cm, outer sep=0pt, fill=white!30, fill opacity=0.6, text opacity=1, align=center] at (current page.center) {%
-    \sffamily\Large PARROCCHIA di SAN FRANCESCO\\[10pt] \sffamily\huge TRIESTE\\[25pt]
-    \fontsize{25}{25}\selectfont \bfseries 2015: 50 ANNI di VITA\\[25pt]
-    \Large la comunità racconta\par%
+\node[anchor=north, minimum width=\paperwidth, minimum height=4.5cm, outer sep=0pt, fill=white!30, fill opacity=0.7, text opacity=1, align=center] at (current page.north) {%
+    \sffamily\Large PARROCCHIA di SAN FRANCESCO in TRIESTE\\[20pt]
+    \fontsize{25}{25}\selectfont \bfseries 2015: 50 ANNI di VITA\\[20pt]
+    \Large LA COMUNITÀ RACCONTA\par%
 };
+\node [anchor=south,align=center,fill opacity=0.5] at (current page.south) {\includegraphics[width=8cm]{tau.png}};
 \end{tikzpicture}
 
 \end{document}  
