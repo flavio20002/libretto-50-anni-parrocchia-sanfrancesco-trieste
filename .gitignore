@@ -7,3 +7,4 @@ log*.*
 temp/
 bin/
 Thumbs.db
+*.pdf
