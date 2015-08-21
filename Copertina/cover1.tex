@@ -6,6 +6,7 @@
 \usetikzlibrary{calc}
 \usepackage{fix-cm}
 
+\definecolor{mio-verde}{rgb}{0.03, 0.47, 0.19}
 \parindent=0pt
 
 \usepackage[pages=some]{background}
@@ -20,10 +21,8 @@ scale=1
 \pagestyle{empty}
 \BgThispage
 \begin{tikzpicture}[remember picture, overlay]
-\node[anchor=north, minimum width=\paperwidth, minimum height=4.5cm, outer sep=0pt, fill=white!30, fill opacity=0.7, text opacity=1, align=center] at (current page.north) {%
-    \sffamily\Large PARROCCHIA di SAN FRANCESCO in TRIESTE\\[20pt]
-    \fontsize{25}{25}\selectfont \bfseries 2015: 50 ANNI di VITA\\[15pt]
-    \Large LA COMUNITÀ RACCONTA\par%
+\node[text width=\paperwidth,anchor=north, minimum width=\paperwidth, minimum height=4.5cm, outer sep=0pt, fill=cyan!50, fill opacity=0.7, text opacity=1, align=center] at (current page.north) {%
+\Large{\sffamily PARROCCHIA di SAN FRANCESCO in TRIESTE\par }\bigskip{\fontsize{25}{25}\selectfont\bfseries 2015: 50 ANNI di VITA\par }\bigskip LA COMUNITÀ RACCONTA\par 
 };
 \node [anchor=south,align=center,fill opacity=0.4] at (current page.south) {\includegraphics[width=8cm]{tau.png}};
 \end{tikzpicture}
