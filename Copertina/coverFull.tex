@@ -9,10 +9,11 @@
 \usepackage{lipsum}
 \usepackage{lettrine}
 
-\def\lunghezzapagina{148.5mm}
+\def\lunghezzapagina{148.7mm}
 \def\larghezzalaterale{15mm}
 
 \definecolor{mio-verde}{rgb}{0.03, 0.47, 0.19}
+\definecolor{mio-azzurro}{HTML}{6ea8b6}
 \parindent=0pt
 
 \begin{document}
@@ -48,10 +49,10 @@ A lode e gloria di Dio!
 \Large{\sffamily PARROCCHIA di SAN FRANCESCO in TRIESTE\par }\bigskip{\fontsize{25}{25}\selectfont\bfseries 2015: 50 ANNI di VITA\par }\bigskip LA COMUNITÀ RACCONTA\par 
 };
 \node [minimum width=\lunghezzapagina, anchor=south east,align=center,fill opacity=0.3] at (current page.south east) {\includegraphics[width=8cm]{tau.png}};
-\node[text width = \larghezzalaterale,anchor=south, minimum width=\larghezzalaterale, minimum height=\paperheight, inner sep=0pt, outer sep=0pt, fill=cyan!50, fill opacity=1, text opacity=1, align=center] at (current page.south) {%
+\node[text width = \larghezzalaterale,anchor=south, minimum width=\larghezzalaterale, minimum height=\paperheight, inner sep=0pt, outer sep=0pt, fill=mio-azzurro, fill opacity=1, text opacity=1, align=center] at (current page.south) {%
 \rotatebox{270}{\bfseries 2015: 50 ANNI di VITA}
 };
-\node[anchor=west, minimum width=148.6mm, minimum height=\paperheight, inner sep=0pt, outer sep=0pt, fill=cyan!50, fill opacity=1, text opacity=1, align=center] at (current page.west) {%
+\node[anchor=west, minimum width=\lunghezzapagina, minimum height=\paperheight, inner sep=0pt, outer sep=0pt, fill=mio-azzurro, fill opacity=1, text opacity=1, align=center] at (current page.west) {%
 };
 \node[anchor=north west, minimum width=148.6mm,yshift=-19mm, inner sep=0pt, outer sep=0pt,text opacity=1, align=center] at (current page.north west) {%
 \usebox\Blurbbox 
