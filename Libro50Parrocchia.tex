@@ -34,7 +34,7 @@
 %%
 \usepackage{titlesec,color}
 \newcommand{\hsp}{\hspace{10pt}}
-\titleformat{\chapter}[hang]{\LARGE\bfseries}{\thechapter\hsp}{0pt}{\LARGE\bfseries}
+\titleformat{\chapter}[hang]{\LARGE\bfseries}{\thechapter\hsp}{0pt}{\thispagestyle{fancy}\LARGE\bfseries}
 \titlespacing*{\chapter}{0cm}{-\topskip+20pt}{20pt}[0pt]
 %%
 %%========================================================
@@ -174,6 +174,8 @@
 \pagenumbering{arabic} % normal page numbering
 \pagestyle{fancy} % style with headnotes, rule, etc.
 \addtolength{\headwidth}{12mm} % long rule
+\input{sources/0c_saluto_vescovo.tex}
+\input{sources/0d_auguri_ministro.tex}
 \input{sources/1_documenti.tex}
 \input{sources/2_stradario.tex}
 \input{sources/3_Testimonianze.tex}
