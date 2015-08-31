@@ -1,10 +1,9 @@
 \documentclass[11pt,openright,twoside]{report}
-\usepackage[a5paper]{geometry}
+\usepackage[a5paper,bottom=2.5cm,top=2.5cm]{geometry}
 
 \usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{lmodern}
 
 \usepackage{textcomp}
 \usepackage{graphicx} % per immagini
@@ -33,10 +32,28 @@
 %%========================================================
 
 %%========================================================
+%%     modifica toc
+%%
+\usepackage[titles]{tocloft}
+\renewcommand{\cftdotsep}{0}
+\renewcommand{\cftchapfont}{\normalfont\normalsize}
+\renewcommand{\cftchappagefont}{\normalfont\normalsize}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftsecdotsep}}
+%\renewcommand\cftchapafterpnum{\vskip0pt}
+\setlength{\cftbeforesecskip}{10pt}
+\setlength{\cftbeforesubsecskip}{5pt}
+%\renewcommand\cftsecafterpnum{\vskip10pt}
+%%
+%%========================================================
+
+%%========================================================
 %%     carattere
 %%
+\usepackage[sc]{mathpazo} % Palatino
+\usepackage{lmodern} % Latin modern
+\linespread{1.05}
 %\renewcommand{\rmdefault}{ptm} %Times
-%\renewcommand*\rmdefault{ppl} %Palatino
+\renewcommand*\rmdefault{ppl} %Palatino
 %\renewcommand*\rmdefault{cmr} %Computer Modern Roman (default)
 %%
 %%========================================================
