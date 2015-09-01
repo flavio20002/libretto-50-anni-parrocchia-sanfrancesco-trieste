@@ -119,6 +119,12 @@
 %%
 %%========================================================
 
+\newcommand*\cleartoleftpage{%
+  \clearpage
+	\thispagestyle{empty}
+  \ifodd\value{page}\hbox{}\newpage\fi
+}
+
 %%========================================================
 %%   per imporre sillabazione
 %%
@@ -150,5 +156,9 @@
 %=========================================
 
 \tableofcontents
+\newpage
+\cleartoleftpage
+\thispagestyle{empty}
+Ciao
 
 \end{document}
