@@ -3,7 +3,7 @@ Type=TeXnicCenterProjectInformation
 Version=4
 
 [ProjectInfo]
-MainFile=Libro50Parrocchia2.tex
+MainFile=Libro50Parrocchia.tex
 UseBibTeX=0
 UseMakeIndex=1
 ActiveProfile=LaTeX ⇨ PDF

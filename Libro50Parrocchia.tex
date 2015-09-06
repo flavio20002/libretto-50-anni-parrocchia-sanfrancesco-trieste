@@ -1,5 +1,5 @@
-\documentclass[11pt,openright,twoside]{report}
-\usepackage[a5paper,bottom=2.5cm,top=2.5cm]{geometry}
+\documentclass[11pt,openright,twoside]{book}
+\usepackage[a5paper,bottom=2.5cm,top=2.5cm,inner=2cm,outer=1.5cm,headheight=14pt]{geometry}
 
 \usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
@@ -22,7 +22,7 @@
 \usepackage{emptypage}
 \usepackage{wrapfig}
 \usepackage{rotating}
-\usepackage{caption}
+\usepackage[font=small,skip=15pt]{caption}
 
 %%========================================================
 %%     modifica dimensioni e formato del titolo dei capitoli
@@ -52,12 +52,11 @@
 %%========================================================
 %%     carattere
 %%
-\usepackage[sc]{mathpazo} % Palatino
 \usepackage{lmodern} % Latin modern
+\usepackage[sc]{mathpazo} % Palatino
 \linespread{1.05}
-%\renewcommand{\rmdefault}{ptm} %Times
-\renewcommand*\rmdefault{ppl} %Palatino
-%\renewcommand*\rmdefault{cmr} %Computer Modern Roman (default)
+%\usepackage{kpfonts} %Palatino
+%\usepackage{mathptmx} %Times
 %%
 %%========================================================
 
@@ -106,36 +105,26 @@
 %%
 %%========================================================
 
-
-%%========================================================
-%%     modifica dimensioni layout larghezza pagina
-%%
-\addtolength{\textwidth}{7mm}%aumento larghezza testo
-\addtolength{\hoffset}{-3.5mm}%diminuisco colonna per note a fianco per centrare testo allargato
-\addtolength{\evensidemargin}{-1mm}%sposto la colonna di testo delle pagine pari a sinistra
-\addtolength{\oddsidemargin}{1mm}%sposto la colonna di testo delle pagine dispari a destra
-%%
-%%========================================================
-
 %%========================================================
 %%            personalizzazione intestazione
 %%
+\pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
 \fancyhf{}
-\fancyhead[LE,RO]{\thepage}
-\fancyhead[LO]{\nouppercase\rightmark}%\nouppercase elimina tutte le intestazioni maiuscole
-\fancyhead[RE]{\nouppercase\leftmark}%\nouppercase elimina tutte le intestazioni maiuscole
-\renewcommand{\headrulewidth}{0.5pt}
+\fancyfoot[C]{\thepage}
+\fancyhead[CE]{\nouppercase\leftmark}%\nouppercase elimina tutte le intestazioni maiuscole
+\fancyhead[CO]{\nouppercase\rightmark}%\nouppercase elimina tutte le intestazioni maiuscole
+\renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
-\addtolength{\headheight}{1.7pt} % riserva spazio per la linea
-\fancypagestyle{plain}{%ridefinisce lo stile plain usato nelle pagine di chapter
-\fancyhead{} % ignora, nello stile plain, le intestazioni
-   \renewcommand{\headrulewidth}{0pt} % e la linea
-   \fancyfoot[C]{\thepage}%per avere numero pagina anche pagina iniziale chapter
-}
 %%
 %%========================================================
+
+\newcommand*\cleartoleftpage{%
+  \clearpage
+	\thispagestyle{empty}
+  \ifodd\value{page}\hbox{}\newpage\fi
+}
 
 %%========================================================
 %%   per imporre sillabazione
@@ -145,28 +134,39 @@
 
 \begin{document}
 \raggedbottom % Prevent vertical justification
-%%========================================================
-%%  italian abstract and acknowledgements
-\pagenumbering{roman}
+
+%=========================================
+\begin{titlepage}
+        \vspace*{10mm}
+		\centering{
+			\Large{\sffamily PARROCCHIA di SAN FRANCESCO in TRIESTE\par }\bigskip{\fontsize{22}{22}\selectfont\bfseries 1965-2015: 50 ANNI di VITA\par }\bigskip LA COMUNITÀ RACCONTA\par
+		}
+			
+		\vspace{10mm}
+		\vspace{\fill}
+		\centering \large{2015}
+\end{titlepage}
+
+%=========================================
 \input{sources/0a_introduzione.tex}
-%%========================================================
-
-%%========================================================
-%%  indexes
-\tableofcontents
-\cleardoublepage
-%%========================================================
-
-%%========================================================
-%% thesis chapters
-\pagenumbering{arabic} % normal page numbering
-\pagestyle{fancy} % style with headnotes, rule, etc.
-\addtolength{\headwidth}{12mm} % long rule
 \input{sources/0c_saluto_vescovo.tex}
 \input{sources/0d_auguri_ministro.tex}
 \input{sources/1_documenti.tex}
 \input{sources/2_stradario.tex}
 \input{sources/3_Testimonianze.tex}
-%%========================================================
+%=========================================
 
+\tableofcontents
+\newpage
+\cleartoleftpage
+\thispagestyle{empty}
+\null
+\vfill
+\small A cura della segreteria del CPP (Susanna Bologna e Gianfranco Liut).
+Foto della copertina realizzata da Marisa Pianigiani. Libro impaginato da Flavio Barisi utilizzando 
+il software open-source \LaTeX.
+\bigbreak
+\begin{center}
+settembre 2015
+\end{center}
 \end{document}
