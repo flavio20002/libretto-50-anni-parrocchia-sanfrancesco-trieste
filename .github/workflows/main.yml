@@ -23,7 +23,7 @@ jobs:
           with:
             run: |
               pdflatex Libro50Parrocchia.tex
-              pdflatex Copertina/coverFull.tex
+              pdflatex coverFull.tex
         - uses: josStorer/get-current-time@v2
           id: current-time
           with:
